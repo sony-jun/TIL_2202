@@ -12,6 +12,21 @@
 - 🌅[7월 8일(git_branch)](./7월/7.8_수업.MD)
 - 👿[7월 9일(자습)](./7월/7.9_자습.md)
 - 😿[7월 10일(자습)](./7월/7.10_자습.md)
+- 🧐[7월 11일(python)](./7월/7.11_python.md)
+
+</div>
+</details>
+
+
+
+
+<details>
+ <summary>8월</summary>
+<div markdown="1">
+
+# 8월
+
+- [8월 1일]
 
 </div>
 </details>
