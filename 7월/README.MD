@@ -6,3 +6,4 @@
 - 😿[7월 10일(자습)](./7.10_자습.md)
 - 🧐[7월 11일(python)](./7.11_python.md)
 - 🐈[7월 12일(python)](./7.12_python.md)
+- 👓[7월 13일(python)](./7.13_python.md)
