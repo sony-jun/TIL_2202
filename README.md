@@ -16,6 +16,7 @@
 - 🐈[7월 12일(python)](./7월/7.12_python.md)
 - 👓[7월 13일(python)](./7월/7.13_python.md)
 - 🤢[7월 14일(python)](./7월/7.14_python.md)
+- 🐶[7월 15일(python)](./7월/7.15_python.md)
 
 </div>
 </details>
