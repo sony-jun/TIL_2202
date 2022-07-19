@@ -12,3 +12,4 @@
 - 💥[7월 16일(python)](./7.16_python.md)
 - 🍅[7월 17일(python)](./7.17_python.md)
 - 💧[7월 18일(python)](./7.18_python.md)
+- 🧠[7월 19일(python)](./7.19_python.md)
