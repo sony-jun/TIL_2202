@@ -1,5 +1,6 @@
 <details>
  <summary>7월</summary>
+
 <div markdown="1">
 
 # 7월
@@ -22,6 +23,7 @@
 - 💧[7월 18일(python)](./7월/7.18_python.md)
 - 🧠[7월 19일(python)](./7월/7.19_python.md)
 - 🎁[7월 20일(python)](./7월/7.20_python.md)
+- 🌂[7월 21일(python)](./7월/7.21_python.md)
 
 </div>
 </details>
