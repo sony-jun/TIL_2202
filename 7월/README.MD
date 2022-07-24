@@ -17,3 +17,4 @@
 - 🌂[7월 21일(python)](./7.21_python.md)
 - 💨[7월 22일(python)](./7.22_python.md)
 - 🤪[7월 23일(python)](./7.23_python_json.md)
+- ☀️[7월 24일(python)](./7.24_python_swEA.md)
