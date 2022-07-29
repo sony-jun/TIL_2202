@@ -22,3 +22,4 @@
 - 📦[7월 26일(python)](./7.26_python.md)
 - 🕊️[7월 27일(python)](./7.27_python.md)
 - 😈[7월 28일(python)](./7.28_python.md)
+- 🥵[7월 29일(python)](./7.29_python.md)
