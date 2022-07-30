@@ -23,3 +23,4 @@
 - 🕊️[7월 27일(python)](./7.27_python.md)
 - 😈[7월 28일(python)](./7.28_python.md)
 - 🥵[7월 29일(python)](./7.29_python.md)
+- 😴[7월 30일(python)](./7.30_자습.md)
