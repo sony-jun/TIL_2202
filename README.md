@@ -33,6 +33,7 @@
 - 😈[7월 28일(python)](./7월/7.28_python.md)
 - 🥵[7월 29일(python)](./7월/7.29_python.md)
 - 😴[7월 30일(python)](./7월/7.30_자습.md)
+- 🙀[7월 31일(python)](./7월/7.31_자습.md)
 
 </div>
 </details>
@@ -43,7 +44,19 @@
 
 # 8월
 
-- [8월 1일]
+- 😅[8월 1일]
+
+</div>
+</details>
+
+
+<details>
+ <summary>9월</summary>
+<div markdown="1">
+
+# 9월
+
+- [9월 1일]
 
 </div>
 </details>
