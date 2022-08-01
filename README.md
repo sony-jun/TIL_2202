@@ -44,11 +44,12 @@
 
 # 8월
 
-- 😅[8월 1일]
+![Thunersee 강, 스위스와 인터라켄 도시](https://img.freepik.com/premium-photo/interlaken-town-with-thunersee-river-switzerland_1339-63307.jpg)
+
+- 😎[8월 1일](./8월/8.1_python.md)
 
 </div>
 </details>
-
 
 <details>
  <summary>9월</summary>
