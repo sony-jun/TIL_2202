@@ -1,3 +1,4 @@
 - 😎[8월 1일](8.1_python.md)
 - 😩[8월 2일](8.2_python.md)
 - 👍[8월 3일](8.3_python.md)
+- 😐[8월 4일](8.4_python.md)
