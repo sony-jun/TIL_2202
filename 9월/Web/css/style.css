@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  min-width: 1280px;
+  color: #333333;
+}
+
+.nav { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  height: 50px;
+  width: 1248px;
+  background-color: white;
+}
+
+.nav-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:visited {
+  color: black;
+  padding:1rem;
+}
+
+.nav-item {
+  margin: 0 1rem;
+}
+.nav-link:hover {
+  color: rgb(223, 234, 238);
+  background-color: black;
+}
+
+.main, .more, .icon {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1280px;
+  margin: 30px ;
+}
+
+.about, .more {
+  margin: 10px;
+}
+
+.about {
+  width: 500px;
+}
+
+.about_img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.content {
+  display: flex;
+  width: 780px;
+  padding: 0 30px;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+}  
+
+.title {
+  font-size: 1.4rem;
+  padding-right: 50px;
+}
+
+.lorem {
+  line-height: 25px;
+  padding-right: 100px;
+}
+
+.more{
+  justify-content:center;
+  display: flex;
+}
+.more_title {
+ 
+  font-size: 1.6rem;
+  
+  display: block;
+}
+
+.icons {
+  margin: 10px 0;
+}
+
+.icn {
+  width: 64px;
+  height: 64px;
+}
+
+.info_list {
+  display: flex;
+  justify-content: space-evenly;
+  width: 1280px;
+  margin: 10px ;
+}
+
+.info_list {
+  text-align: center;
+  line-height: 30px;
+}
+
+
+.upbutton{
+  width: 1248px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+}
+
+
+.sales-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem ;
+  width: 1280px;
+}
+.sales-item {
+  width: 380px;
+  border: 1px solid black;
+  margin: 1rem;
+}
+.sales-text {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.8rem;
+  font-size : 1.4rem;
+  font-weight: bold;
+  padding-bottom: 0;
+}
+.salse-left {
+  text-align: left;
+  padding: 1rem;
+  line-height: 2rem;
+  padding-left: 0.8rem;
+}
+.img-margin {
+  margin: 0.8rem;
+  width: auto;
+}
