@@ -87,8 +87,24 @@
 
 # 9월
 
+![indiana-cornfield-sunset.webp](C:\Users\son\Desktop\TIL\README.assets\indiana-cornfield-sunset.webp)
+
+
+
 - 😀[9월 1일](./9월/9.1_Web.md)
 - 😔[9월 2일](./9월/9.2_Web.md)
+- 🐤[9월 3일](./9월/9.3_자습.md)
+
+</div>
+</details>
+
+<details>
+ <summary>10월</summary>
+<div markdown="1">
+
+# 10월
+
+- 😀[9월 1일](./9월/9.1_Web.md)
 
 </div>
 </details>
