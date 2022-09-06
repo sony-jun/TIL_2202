@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
+
+.card-title{
+  text-align: center;
+  padding : auto;
+  margin : 2rem;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  display: flex!important;
+  
+  justify-content: flex-end;
+}
+
+.st {
+  
+  position: sticky;
+  top: 0;
+  
+}
+
+.carousel-inner > .carousel-item > img{
+  /* width: 640px;
+  height: 720px; */
+}
+
+
+
