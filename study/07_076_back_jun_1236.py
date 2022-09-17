@@ -22,10 +22,3 @@ for k in in_matrix:
     if 'X' not in k:
         y +=1
 print(max(x,y))
-
-
-
-
-
-
-
