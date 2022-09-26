@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>로렘 입숨 한글 버전!</h1>
+<form action="/loremout" method="GET">
+  문단의 수 : <input type="text" name="mundan">
+  <br>
+  단어 수 입력 페이지 : <input type="text" name="dango">
+
+  <input type="submit">
+</form>
+
+{% endblock %}

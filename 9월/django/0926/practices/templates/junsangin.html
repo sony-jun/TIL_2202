@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>당신의 전생은 무엇일까요?</h1>
+<form action="/junsangout" method="GET">
+  이름을 입력하세요 : <input type="text" name="junsang">
+  <input type="submit">
+</form>
+
+{% endblock %}
