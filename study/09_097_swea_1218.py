@@ -1,6 +1,7 @@
 for _ in range(1, 11):  # 개수가 10개로 제한 되어 있으니까 범위를 10개로 맞춰줌, 1,11인 이유는 밑에 프린트 할때 편하라고
     number = int(input())  # 길이를 입력 받음
     gualho = list(input())  # 괄호(문자)를 입력받음
+
     li_1 = []
     li_2 = []
     li_3 = []
@@ -53,3 +54,24 @@ for _ in range(1, 11):  # 개수가 10개로 제한 되어 있으니까 범위�
     else:
         t = 0
     print(f"#{_} {t}")  # 값 표시
+
+
+"""
+for test_case in range(1, 11):
+    n = int(input())
+    bracket = input()
+    stack = []
+    left = ["<", "{", "[", "("]
+    right = [">", "}", "]", ")"]
+    answer = 1
+    for i in bracket:
+        if i in left:
+            stack.append(i)
+        else:
+            if left.index(stack[-1]) == right.index(i):
+                stack.pop()
+            else:
+                answer = 0
+                break
+    print(f"#{test_case} {answer}")
+"""
