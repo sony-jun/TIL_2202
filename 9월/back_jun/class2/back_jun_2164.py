@@ -1,11 +1,14 @@
-from collections import deque
+a, b = map(int, input().split())
 
-t = int(input())
-deque = deque([i for i in range(1, t+1)])
+li = []
+cnt_1 = 1
+cnt_2 = 1
+for i in range(a, 0, -1):
+    li.append(i)
+for k in range(b):
+    cnt_1 *= li[k]
 
-while(len(deque) >1):
-    deque.popleft()
-    move_num = deque.popleft()
-    deque.append(move_num)
-    
-print(deque[0])
+for j in range(1, b + 1):
+    cnt_2 *= j
+
+print(round(cnt_1 / cnt_2))
