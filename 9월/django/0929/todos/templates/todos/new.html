@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>새글 쓰기</h1>
+<form action="{% url 'todos:create' %}">
+  할일: <input type="text" name="content"><br><br>
+  우선순위: <select type="number" name="priority">
+    <option value="1">1</option>
+    <option value="1">2</option>
+    <option value="1">3</option>
+    <option value="1">4</option>
+    <option value="1">5</option>
+  </select><br><br>
+  마감기한: <input type="date" name="deadline"><br><br>
+  <input type="submit">
+</form>
+
+{% endblock %}

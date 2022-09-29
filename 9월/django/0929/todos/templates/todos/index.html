@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>게시판</h1>
+
+<ul>
+  {% for todo in todos %}
+  <li>ID: {{ todo.pk }} | 우선순위: {{ todo.priority }} | 할일: {{ todo.content }} | 마감기한: {{ todo.deadline }}
+    | 작성일자: {{ todo.created_at }} | 완료 : {{ todo.completed }}
+    <a href="/todos/update/{{ todo.pk }}">할일 상태 변경</a>
+
+    <a href="/todos/delete/{{ todo.pk }}">
+      [삭제]
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'todos:new' %}">새글쓰기</a>
+
+
+
+{% endblock %}

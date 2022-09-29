@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>내용을 수정합시다!</h1>
+
+<form action="{% url 'todos:update' todo.pk %}">
+  할일: <input type="text" name="content" value="{{ todo.content }}"><br><br>
+  우선순위:
+  <input type="text" name="priority" value="{{ todo.priority }}"><br><br>
+  마감기한:
+  <input type="text" name="deadline" value="{{ todo.deadline }}"><br><br>
+
+  <input type="submit">
+</form>
+
+{% endblock %}

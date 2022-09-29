@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>작성 완료</h1>
+<p>할일: {{ content }}</p>
+<p>우선 순위 {{ priority }}:</p>
+<p>마감 기한 : {{ deadline }}</p>
+
+<a href="{% url 'todos:index' %}">목록으로</a>
+{% endblock %}
