@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="text-center my-3 fw-bold fs-1">
+  <p>게시판</p>
+</div>
+
+<table class="table">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">리뷰번호</th>
+      <th scope="col">리뷰제목</th>
+      <th scope="col">작성시간</th>
+      <th scope="col">수정시간</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in review %}
+    <tr>
+      {% if i.create_at == i.updated_at %}
+      <th scope="row">{{ i.pk }}</th>
+      <td><a href="{% url 're_pair:detail' i.pk %}">{{ i.title }}</a></td>
+      <td>{{ i.created_at }}</td>
+      <td>수정하지 않음</td>
+      {% else %}
+      <th scope="row">{{ i.pk }}</th>
+      <td><a href="{% url 're_pair:detail' i.pk %}">{{ i.title }}</a></td>
+      <td>{{ i.created_at }}</td>
+      <td>{{ i.updated_at }}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

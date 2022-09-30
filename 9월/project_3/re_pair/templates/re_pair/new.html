@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="text-center my-3 fw-bold fs-1">
+  <p>리뷰 작성</p>
+</div>
+
+<form action="{% url 're_pair:create' %}">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">제목</label>
+    <input type="text" class="form-control" id="exampleInputtext" aria-describedby="" name="title">
+    <div id="emailHelp" class="form-text">제목을 입력하세요</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">리뷰쓰기</button>
+</form>
+
+
+
+{% endblock %}

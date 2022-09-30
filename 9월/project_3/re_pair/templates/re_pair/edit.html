@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+<h1>글 수정</h1>
+</div>
+<form action="{% url 're_pair:update' review.pk %}">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">제목</label>
+    <input type="text" class="form-control" id="exampleInputtext" aria-describedby="" name="title" value="{{ review.title }}">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content">{{ review.content }}</textarea>
+  </div>
+
+
+  <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary">리뷰수정하기</button>
+  </div>
+</form>
+
+
+
+
+
+{% endblock %}

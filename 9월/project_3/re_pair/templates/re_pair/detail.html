@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="text-center my-3 fw-bold fs-1">
+  <p>영화 리뷰</p>
+</div>
+
+<table class="table">
+  <thead>
+    <tr class="table-info">
+      <th scope="col">{{ review.title}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{ review.content }}</th>
+    </tr>
+  </tbody>
+</table>
+
+
+<br>
+<br>
+
+<div class="d-flex justify-content-end">
+<a href="{% url 're_pair:edit' review.pk %}" class="btn btn-primary mx-1 " role="button">리뷰수정</a>
+<a href="{% url 're_pair:delete' review.pk %}" class="btn btn-primary mx-1" role="button">리뷰삭제</a>
+<a href="{% url 're_pair:index' %}" class="btn btn-primary mx-1" role="button">목록으로</a>
+</div>
+{% endblock %}
