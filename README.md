@@ -129,6 +129,19 @@
 
 # 10월
 
+![파일:해피할로윈.jpg](https://w.namu.la/s/45f0a9e507fc904b7accb3586ff709220b6242dfda220bd7ae85a39b57b22a760a4fa4cb0c2fbf16f37c9d229d0e93a1aac0d9c3dbd927c039698d9bdd9ab9a6c482388f37f0e3860b7be41713880b763e808fc7397c2cb48d4e4d3b9e8590bdc14a4c882dd6ead3083ef203c983ab5a)
+
+- 😀[10월 1일](./10월/10.1_자습.md)
+
+</div>
+</details>
+
+<details>
+ <summary>10월</summary>
+<div markdown="1">
+
+# 11월
+
 - 😀[9월 1일](./9월/9.1_Web.md)
 
 </div>
