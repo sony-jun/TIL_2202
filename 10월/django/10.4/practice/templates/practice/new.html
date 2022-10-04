@@ -1,0 +1,9 @@
+<h1>글쓰기</h1>
+
+
+<form action="{% url 'practice:create' %}" method="POST">
+  {% csrf_token %}
+  {{ practice_form.as_p }}
+  <!-- forms로 간단하게 게시판 구현이 가능!!!-->
+  <input type="submit" value="글쓰기">
+</form>
