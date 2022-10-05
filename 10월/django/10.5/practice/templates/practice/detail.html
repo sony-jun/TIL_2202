@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+<h1>{{ practice.pk }}번 게시글</h1>
+<p>{{ practice.created_at }} | {{ practice.updated_at }}</p>
+<p>{{ practice.content }} </p>
+<a href="{% url 'practice:update' practice.pk %}">수정하기</a>
+<a href="{% url 'practice:index' %}">홈으로</a>
+
+{% endblock %}
