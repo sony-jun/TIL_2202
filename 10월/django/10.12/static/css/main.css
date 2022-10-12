@@ -1,0 +1,30 @@
+
+body {
+  background-image: url('../image/netflix.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  width: 100vw;
+}
+
+.back-opacity{
+  width: 100vw;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.537);
+  z-index: 1;
+}
+
+.img-size {
+  width: 8rem;
+  height: 4rem;
+}
+
+.article-body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.font-size {
+  font-size: 40px;
+  letter-spacing: -2px;
+}

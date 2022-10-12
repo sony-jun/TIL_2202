@@ -11,7 +11,7 @@ visited = [0] * (n + 1)
 
 
 def dfs(start):
-    global cnt
+    global cnt  # 바깥쪽이건, 안쪽이건 cnt값이 변화하게 하기위해 '전역변수'로 설정함
     visited[start] = 1
     for i in graph[start]:
         if visited[i] == 0:
@@ -21,3 +21,6 @@ def dfs(start):
 
 dfs(1)
 print(cnt)
+
+print(graph)
+print(visited)
