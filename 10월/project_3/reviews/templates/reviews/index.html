@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+
+<h2 class="m-3">리뷰목록</h2>
+<div class="container">
+  <table class="table my-5">
+    <thead class="text-white">
+      <tr class="opacity-75 bg-dark">
+        <th scope="col">리뷰 제목</th>
+        <th scope="col">영화 제목</th>
+        <th scope="col">별점</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for review in reviews %}
+      <tr>
+        <th scope="row"><a href="{% url 'reviews:detail' review.pk %}" class="text-decoration-none">
+            {{ review.title }}</a>
+        </th>
+        <td>{{ review.movie_name }}</td>
+        <td>{{ review.grade }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+  {% endblock content %}

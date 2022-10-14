@@ -15,12 +15,9 @@ def dfs(start):
     visited[start] = 1
     for i in graph[start]:
         if visited[i] == 0:
-            dfs(i)
+            print(i)
             cnt += 1
 
 
 dfs(1)
 print(cnt)
-
-print(graph)
-print(visited)

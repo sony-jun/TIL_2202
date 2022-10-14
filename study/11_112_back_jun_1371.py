@@ -4,7 +4,7 @@ input = sys.stdin.read
 
 n = input()  # 입력을 받는다
 li = []  # 빈 리스트
-dic = {}  # 빈 딕셔너리
+dic = {}  # 알파벳 카운트를 위한 빈 딕셔너리
 for i in n:
     if i != " " and i != "\n":  # 입력받은 값중에 띄어쓰기와 줄바꾸는엔터를 제외하고
         li.append(i)  # 빈 리스트에 전부 보내면, 띄어쓰기와 줄바꾸기는 없는채로 리스트가 채워진다
@@ -21,3 +21,21 @@ for key, value in dic.items():
 choi_bin.sort()  # 알파벳 순으로 정렬하게하기 위해서 정렬을 사용한다.
 for k in choi_bin:
     print(k, end="")  # 띄어쓰기 없이 출력한다.
+
+"""
+import sys
+
+input = sys.stdin.read
+
+alpha = [0] * 26
+sentence = input().replace("\n", "").replace(" ", "")
+
+for s in sentence:
+    if s.isalpha():
+        alpha[ord(s) - 97] += 1
+mx = max(alpha)
+
+for i in range(26):
+    if mx == alpha[i]:
+        print(chr(i + 97), end="")
+"""
