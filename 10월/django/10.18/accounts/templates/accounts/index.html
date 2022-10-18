@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+<p>{{ i.pk }}
+
+</p>
+<div class="container">
+  <table class="table my-5">
+    <thead class="text-white">
+      <tr class="opacity-75 bg-dark">
+        <th scope="col">가입순서</th>
+        <th scope="col">ID</th>
+        <th scope="col">E-mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in accounts %}
+      <tr>
+        <td>{{ i.pk }}</td>
+
+        <th scope="row">
+          <a href="{% url 'accounts:detail' i.pk %}" class="text-decoration-none">{{ i.username }}</a>
+        </th>
+        <td>{{ i.email }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
