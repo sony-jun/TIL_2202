@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+<p>{{ i.pk }}
+
+</p>
+<div class="container">
+  <table class="table my-5">
+    <thead class="text-white">
+      <tr class="opacity-75 bg-dark">
+        <th scope="col">리뷰 제목</th>
+        <th scope="col">영화 제목</th>
+        <th scope="col">별점</th>
+        <th scope="col">작성자</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in review %}
+      <tr>
+        <th scope="row">
+          <a href="{% url 'review:detail' i.pk %}" class="text-decoration-none">{{ i.title }}</a>
+        </th>
+        <td>{{ i.movie_name }}</td>
+        <td>{{ i.grade }}</td>
+        <td>{{ i.user }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
