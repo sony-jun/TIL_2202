@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<h1>{{ user.username }}의 정보</h1>
+<p>{{ user.email }} | {{ user.last_name }}{{ user.first_name }}</p>
+<p>팔로우 : {{ user.followings.count }} | 팔로워 : {{ user.followers.count }}</p>
+{% if request.user != user %}
+<a href="{% url 'accounts:follow' user.pk %}">
+  {% if request.user in user.followers.all %}
+  팔로우 취소
+  {% else %}
+  팔로우
+  {% endif %}
+</a>
+{% endif %}
+
+<div class="row">
+  <div class="col-6">
+    <h2> 작성한 글</h2>
+    <p class="text-muted">{{ user.reviews_set.count }}개를 작성하였습니다</p>
+    {% for review in user.review_set.all %}
+    <p>
+      {{ forloop.counter }}
+      <a href="{% url 'reviews:detail' review.pk %}">{{ review.title }}</a>
+    </p>
+    {% endfor %}
+  </div>
+  <div class="col-6">
+    <h2>작성한 댓글</h2>
+    <p class="text-muted">{{ user.comment_set.count }}개를 작성하였습니다</p>
+    {% for comment in user.comment_set.all %}
+    <p>
+      {{ forloop.counter }}
+      <a href="{% url 'reviews:detail' comment.review_id %}">{{ comment.content }}</a>
+    </p>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

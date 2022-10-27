@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+<div class="card" style="width: 18rem;">
+    {% if form.image %}
+    <img src="{{ form.image.url }}" class="card-img-top" alt="...">
+    {% else %}
+    {% comment %} <img src="{{ form.image.url }}" class="card-img-top" alt="..."> {% endcomment %}
+    {% endif %}
+    <div class="card-body">
+      <p class="card-text">{{ form.title }}</p>
+      <p class="card-text">{{ form.content }}</p>
+      <p class="card-text">{{ form.user }}</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <a class="btn btn-success" href="{% url 'reviews:reviews-update' form.pk %}">수정</a>
+        <a class="btn btn-danger" href="{% url 'reviews:reviews-delete' form.pk %}">삭제</a>
+    </div>
+  </div>
+{% endblock content %}

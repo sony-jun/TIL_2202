@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for review in reviews %}
+        <div class="col">
+          <div class="card">
+            {% if review.image_thumbnail %}
+            <img src="{{ review.image_thumbnail.url }}" class="card-img-top" alt="...">
+            {% else %}
+            {% comment %} <img src="{{ reivew.image_thumbnail.url }}" class="card-img-top" alt="..."> {% endcomment %}
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ review.title }}</h5>
+              <p class="card-text">{{ review.content }}</p>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex justify-content-between">
+              <small class="text-muted">{{ review.created_at }}</small>
+              <a class="btn btn-primary" href="{% url 'reviews:reviews-detail' review.pk %}">상세보기</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+  </div>
+{% endblock content %}
