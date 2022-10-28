@@ -2,8 +2,25 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
-<h1>{{ user.username }}의 정보</h1>
-<p>{{ user.email }} | {{ user.last_name }}{{ user.first_name }}</p>
+<style>
+ 
+  .area {
+    width: 240px;
+    background: white;
+  }
+
+  .white-space {
+    white-space: nowrap;
+  }
+
+  .overflow {
+    overflow: hidden;
+  }
+</style>
+
+<h1>{{ user.username }}님의 정보</h1>
+<p>이메일 : {{ user.email }}</p>
+<p>풀네임 : {{ user.last_name }}{{ user.first_name }}</p>
 <p>팔로우 : {{ user.followings.count }} | 팔로워 : {{ user.followers.count }}</p>
 {% if request.user != user %}
 <a href="{% url 'accounts:follow' user.pk %}">
@@ -18,23 +35,61 @@
 <div class="row">
   <div class="col-6">
     <h2> 작성한 글</h2>
-    <p class="text-muted">{{ user.reviews_set.count }}개를 작성하였습니다</p>
-    {% for review in user.review_set.all %}
-    <p>
-      {{ forloop.counter }}
-      <a href="{% url 'reviews:detail' review.pk %}">{{ review.title }}</a>
-    </p>
+
+    <p class="text-muted">{{ user.article_set.count }}개를 작성하였습니다</p>
+    <!--
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        {% for article in user.article_set.all %}
+           <p> <a href="{% url 'reviews:reviews-detail' article.pk %}">{{ article.title }}</a></p>
+           <hr>    
+  {% endfor %}
+      </div>
+    </div>
+    -->
+
+    
+    <div class="container">
+      <table class="table my-5">
+        <thead class="text-white">
+          <tr class="opacity-75 bg-dark">
+            <th scope="col">번호</th>
+            <th scope="col">제목</th>
+            <th scope="col">내용</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for article in user.article_set.all %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <th scope="row">
+              <a href="{% url 'reviews:reviews-detail' article.pk %}">{{ article.title }}</a>
+              <td>
+                <div class="area white-space overflow">{{ article.content }}
+                </div>
+                </td>      
     {% endfor %}
+  </tbody>
+</table>
   </div>
+</div>
+
   <div class="col-6">
     <h2>작성한 댓글</h2>
     <p class="text-muted">{{ user.comment_set.count }}개를 작성하였습니다</p>
-    {% for comment in user.comment_set.all %}
-    <p>
-      {{ forloop.counter }}
-      <a href="{% url 'reviews:detail' comment.review_id %}">{{ comment.content }}</a>
-    </p>
-    {% endfor %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body m-1" >
+        {{ forloop.counter }}
+        <p>
+          {% for comment in user.comment_set.all %}
+          <a href="{% url 'reviews:reviews-detail' comment.article_id %}">
+            <div class="area white-space overflow">{{ comment.content }}</div>
+          </a>
+        </p>
+        <hr>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </div>
 

@@ -1,0 +1,22 @@
+div[class="card_link_img"] {
+    position: relative;
+    height: 40vh;
+}
+
+div[class="card_link_btn"] {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: none;
+}
+
+div[class="card_link_img"]:hover > img {
+    scale: 1.1;
+    opacity: 50%;
+    transition: all 0.8s
+}
+
+div[class="card_link_img"]:hover div[class="card_link_btn"] {
+    display: block;
+}

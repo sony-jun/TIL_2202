@@ -27,7 +27,7 @@ def signup(request):
 
 def index(request):
     accounts = get_user_model().objects.order_by("-pk")
-    context = {"accounts": accounts}
+    context = {"accounts": accounts,}
     return render(request, "accounts/index.html", context)
 
 

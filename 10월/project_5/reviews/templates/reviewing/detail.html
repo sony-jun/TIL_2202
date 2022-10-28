@@ -1,20 +1,76 @@
 {% extends 'base.html' %}
 {% load django_bootstrap5 %}
+{% load static %}
 {% block content %}
-<div class="card" style="width: 18rem;">
-    {% if form.image %}
-    <img src="{{ form.image.url }}" class="card-img-top" alt="...">
-    {% else %}
-    {% comment %} <img src="{{ form.image.url }}" class="card-img-top" alt="..."> {% endcomment %}
-    {% endif %}
-    <div class="card-body">
-      <p class="card-text">{{ form.title }}</p>
-      <p class="card-text">{{ form.content }}</p>
-      <p class="card-text">{{ form.user }}</p>
-    </div>
-    <div class="card-footer d-flex justify-content-between">
-        <a class="btn btn-success" href="{% url 'reviews:reviews-update' form.pk %}">수정</a>
-        <a class="btn btn-danger" href="{% url 'reviews:reviews-delete' form.pk %}">삭제</a>
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="card w-50">
+      <h2 class="card-text text-center py-3">{{ form.user }}</h2>
+      {% if form.image %}
+        <img src="{{ form.image.url }}" class="card-img-top" style="weight: 100%; height: 45vh;" alt="...">
+      {% else %}
+        <img src="{% static 'image/noimg.jpg' %}" class="card-img-top" style="weight: 100%; height: 45vh;" alt="...">
+      {% endif %}
+      <div class="card-body">
+        <p class="card-text">{{ form.title }}</p>
+        <p class="card-text">{{ form.content }}</p>
+      </div>
+      {% if request.user == form.user %}
+        <div class="card-footer d-flex justify-content-between">
+          <a class="btn btn-success" href="{% url 'reviews:reviews-update' form.pk %}">수정</a>
+          <a class="btn btn-danger" href="{% url 'reviews:reviews-delete' form.pk %}">삭제</a>
+        </div>
+      {% endif %}
     </div>
   </div>
+  <div class="container d-flex flex-column" style="z-index: 2;">
+    <form id='comment-form' data-detail-id="{{ form.pk }}">
+      {% csrf_token %}
+      <p>댓글 작성</p>
+      {% bootstrap_form comment %}
+      <button class="btn btn-primary w-100">작성</button>
+    </form>
+    <div id="comments" class="my-5">
+      {% for comment in comments %}
+        {{ comment.user }}
+        |
+        {{ comment.content}}
+        <hr>
+      {% endfor %}
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const commentForm = document.querySelector('#comment-form')
+    const csrftoken = document
+      .querySelector('[name=csrfmiddlewaretoken]')
+      .value
+      commentForm
+      .addEventListener('submit', function (event) {
+        event.preventDefault();
+        axios({
+          method: 'POST',
+          url: `/reviews/detail/${event.target.dataset.detailId}/comments/`,
+          headers: {
+            'X-CSRFToken': csrftoken
+          },
+          data: new FormData(commentForm)
+        })
+          .then(response => {
+            console.log(response.status)
+            const comments = document.querySelector('#comments')
+            const p = document.createElement('p')
+            p.innerText = `${response.data.userName} | ${response.data.content}`
+            const hr = document.createElement('hr')
+            comments.append(p, hr)
+            commentForm.reset()
+          })
+          .catch(error => {
+            console.log(error.response)
+            if (error.response.status === 403) {
+              alert("로그인을 먼저 해주세요!")
+              window.location.href = '{% url "accounts:login" %}';
+            }
+          })
+        })
+  </script>
 {% endblock content %}

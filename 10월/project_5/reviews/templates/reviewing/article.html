@@ -1,30 +1,33 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load django_bootstrap5 %}
+
 {% block content %}
-  <div class="container">
+
+  <div class="container my-5">
+    <h1 class="text-center my-5">게시판</h1>
     <div class="row row-cols-1 row-cols-md-3 g-4">
       {% for review in reviews %}
         <div class="col">
           <div class="card">
-            {% if review.image_thumbnail %}
-            <img src="{{ review.image_thumbnail.url }}" class="card-img-top" alt="...">
-            {% else %}
-            {% comment %} <img src="{{ reivew.image_thumbnail.url }}" class="card-img-top" alt="..."> {% endcomment %}
-            {% endif %}
+            <div class="card_link_img">
+              {% if review.image_thumbnail %}
+                <img src="{{ review.image_thumbnail.url }}" class="card-img-top" style="height: 100%; width:100%;" alt="...">
+              {% else %}
+                <img src="{% static 'image/noimg.jpg' %}" class="card-img-top" style="height: 100%; width:100%;" alt="...">
+              {% endif %}
+              <div class="card_link_btn">
+                <a class="btn btn-primary" href="{% url 'reviews:reviews-detail' review.pk %}">상세보기</a>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">{{ review.title }}</h5>
-              <p class="card-text">{{ review.content }}</p>
-            </div>
-            <div class="card-footer">
-              <div class="d-flex justify-content-between">
-              <small class="text-muted">{{ review.created_at }}</small>
-              <a class="btn btn-primary" href="{% url 'reviews:reviews-detail' review.pk %}">상세보기</a>
-            </div>
+              <p class="card-text">{{ review.created_at }}</p>
             </div>
           </div>
         </div>
-      </div>
+      {% endfor %}
+    </div>
 
-    {% endfor %}
   </div>
+</div>
 {% endblock content %}
