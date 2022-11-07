@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+
+<form action="" class="container" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% bootstrap_form store_form %}
+  <input type="submit" value="OK" class="btn btn-primary btn-md">
+</form>
+
+{% endblock content %}
