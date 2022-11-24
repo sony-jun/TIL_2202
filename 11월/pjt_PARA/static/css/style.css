@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* 전체적인 부분 css */
+body {
+  font-family: 'Gothic A1', sans-serif;
+  background-color: rgba(255, 255, 249, 0.677);
+  padding-top: 20rem;
+}
+
+.container-css {
+  width: min(100%, 100vw);
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+@media (min-width: 480px) {
+  .container-css {
+    padding-inline: 32px;
+  }
+
+  .img-back figcaption {
+    line-height: 336px;
+    font-size: 0.8rem;
+  }
+
+  .image-scroll-size {
+    height: 36rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .image-scroll-size {
+    height: 45rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-css {
+    padding-inline: 48px;
+  }
+
+  .img-back figcaption {
+    line-height: 336px;
+    font-size: 0.9rem;
+  }
+
+  .image-scroll-size {
+    height: 63rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .img-back figcaption {
+    line-height: 450px;
+    font-size: 1rem;
+  }
+
+  .image-scroll-size {
+    height: 118rem;
+  }
+}
+
+@media (min-width: 2148px) {
+  .img-back figcaption {
+    line-height: 610px;
+    font-size: 1.5rem;
+  }
+}
+
+.font-space {
+  letter-spacing: -1px;
+}
+
+/* */
+.button-background {
+  background-color: transparent;
+  color: transparent;
+  border: 0 transparent;
+}
+
+.close-btn-background {
+  background-color: transparent;
+  border: 0 transparent;
+}
+
+.form-control:focus,
+.form-control:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+/*검색 버튼*/
+.gnb_search button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  background: url(./images/ico_package.png) no-repeat 13px -337px;
+  text-align: left;
+  text-indent: -999em;
+}
+
+.gnb_search {
+  width: 30%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 20px;
+  left: -200px;
+  z-index: 0;
+}
+
+.gnb_search fieldset {
+  position: relative;
+  padding-right: 38px;
+  border-bottom: 1px solid #e6e6e6;
+  width: 170px;
+}
+
+.gnb_search input {
+  height: 38px;
+  padding: 0 10px;
+  border: 0;
+  font-size: 0.875em;
+  line-height: 1.5714;
+  color: #b2b2b2;
+  box-sizing: border-box;
+  width: 95%;
+}
+
+
+
+/* login 부분 */
+.signup__button {
+  width: 18rem;
+}
+
+.login_font-weight {
+  font-weight: bold;
+}
+
+.login_form-width {
+  width: 20rem;
+}
+
+.notice-font-size {
+  font-size: 13px;
+  letter-spacing: -1px;
+}
+
+
+/* .index-card-image {
+  box-shadow: 2px 3px 15px rgba(181, 189, 193, 0.52);
+} */
+
+
+.detail-image:hover {
+  cursor: -webkit-zoom-in;
+}
+
+/* image modal end */
+
+.nav-margin {
+  margin-top: 5rem;
+}
+
+.image-card {
+  overflow: hidden;
+}
+
+
+.image-card img {
+  transition-duration: 2s;
+  -webkit-transition-duration: 2s;
+}
+
+.image-card:hover img {
+  transform: scale(1.18);
+  -webkit-transform: scale(1.18) translateZ(0);
+  -ms-transform: scale(1.18) translateZ(0);
+}
+
+.index-card-image {
+  object-fit: cover;
+}
+
+.img-back {
+  position: relative;
+}
+
+.img-back image-card {
+  width: 100%;
+  height: 100%;
+}
+
+.img-back figcaption {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.325);
+  color: white;
+  font-weight: 500;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  letter-spacing: -2px;
+}
+
+.img-back figcaption:hover {
+  opacity: 1;
+}
+
+/* absolute의 기준은 원래 body */
+
+/* follow btn */
+.follow-btn {
+  border: 1px solid rgb(41, 40, 46);
+  color: rgb(172, 165, 203);
+  box-shadow: rgba(101, 87, 110, 0.2) 0px 2px 8px 0px;
+}
+
+.follow-btn:hover {
+  background-color: rgba(104, 101, 161, 0.47);
+  color: rgb(114, 108, 175);
+}
+
+.follow_cancel-btn {
+  border: 1px solid rgb(41, 40, 46);
+  color: rgb(175, 111, 108);
+  box-shadow: rgba(103, 62, 62, 0.2) 0px 2px 8px 0px;
+}
+
+.follow_cancel-btn:hover {
+  background-color: rgba(161, 101, 101, 0.47);
+  color: rgb(175, 111, 108);
+}
+
+.dm-btn {
+  border: 1px solid rgb(41, 40, 46);
+  color: rgb(30, 30, 31);
+  font-weight: 500;
+  box-shadow: rgba(62, 88, 103, 0.2) 0px 2px 8px 0px;
+}
+
+.dm-btn:hover {
+  background-color: black;
+  color: rgba(255, 255, 255, 0.687);
+}
+
+/* 채팅 버튼 */
+i.fa-comment {
+  color: #fbcca3c6;
+  font-size: 20px;
+}
+
+i.fa-comment:hover {
+  color: rgb(83, 162, 247);
+}
+
+i.fa-comment:active {
+  color: rgb(184, 184, 251);
+}
+
+
+.profile-image-border {
+  border-radius: 50%;
+  border: 6px solid rgba(0, 0, 0, 0);
+  box-shadow: rgba(107, 101, 101, 0.17) 0px -23px 25px 0px inset, rgba(111, 107, 107, 0.15) 0px -36px 30px 0px inset, rgba(114, 110, 110, 0.1) 0px -79px 40px 0px inset, rgba(88, 82, 82, 0.06) 0px 2px 1px, rgba(103, 102, 102, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(106, 100, 100, 0.09) 0px 32px 16px;
+}
+
+.profile-image-border-nopic {
+  border-radius: 50%;
+  box-shadow: rgba(107, 101, 101, 0.17) 0px -23px 25px 0px inset, rgba(111, 107, 107, 0.15) 0px -36px 30px 0px inset, rgba(114, 110, 110, 0.1) 0px -79px 40px 0px inset, rgba(88, 82, 82, 0.06) 0px 2px 1px, rgba(103, 102, 102, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(106, 100, 100, 0.09) 0px 32px 16px;
+}
+
+.profile-image-sm_md-border {
+  border: 6px solid rgba(0, 0, 0, 0);
+  box-shadow: rgba(107, 101, 101, 0.17) 0px -23px 25px 0px inset, rgba(111, 107, 107, 0.15) 0px -36px 30px 0px inset, rgba(114, 110, 110, 0.1) 0px -79px 40px 0px inset, rgba(88, 82, 82, 0.06) 0px 2px 1px, rgba(103, 102, 102, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(106, 100, 100, 0.09) 0px 32px 16px;
+}
+
+div.btn-outline-hover>a.btn-outline-light:hover {
+  background-color: black;
+  border: 1px solid rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.follow-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.follow-dropdown-shadow {
+  border-radius: 6px 6px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: rgba(13, 109, 253, 0) !important;
+}
+
+/* sm이하의 뷰포인트일때 네브바에 보여지는 프로필 이미지 */
+.user-profile-nametag {
+  box-shadow: rgba(0, 0, 0, 0.185) 0px 2px 4px, rgba(0, 0, 0, 0.077) 0px 7px 13px -3px, rgba(0, 0, 0, 0.075) 0px -3px 0px inset;
+}
+
+
+/* 검색 바 버튼 */
+.search-btn-outline {
+  background-color: rgba(39, 41, 38, 0.212);
+}
+
+.search-btn-outline:hover {
+  background-color: rgb(158, 246, 189);
+  transition-duration: .5s;
+  -webkit-transition-duration: .5s;
+}
+
+.scroll-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-none::-webkit-scrollbar {
+  display: none;
+}
+
+
+.review-delete-btn {
+  background-color: none;
+  border: 1px solid rgb(218, 128, 107);
+  color: rgb(218, 128, 107);
+}
+
+.review-delete-btn:hover {
+  background-color: rgba(224, 156, 131, 0.181);
+  border: 1px solid rgba(49, 1, 1, 0.387);
+  color: rgb(209, 30, 30);
+}
+
+.review-update-btn {
+  background-color: none;
+  border: 1px solid rgb(97, 172, 63);
+  color: rgb(97, 172, 63);
+}
+
+.review-update-btn:hover {
+  background-color: rgba(140, 201, 161, 0.181);
+  border: 1px solid rgba(1, 40, 1, 0.387);
+  color: rgb(81, 128, 68);
+}
+
+/* 카트 버튼 호버 */
+.cart_button-hover:hover {
+  background-color: rgba(233, 245, 251, 0.168);
+}
+
+.test11 {
+  background-color: black;
+}
+
+.detail-scroll {
+  overflow: scroll;
+}
+
+.detail-scroll::-webkit-scrollbar {
+  display: none;
+
+}
+
+
+.tag-border {
+  background-color: #8ebffe63;
+  padding: 10px;
+  border: 2px solid rgba(126, 189, 253, 0.304);
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 8px;
+}
+
+
+.review-card {
+  box-shadow: rgba(210, 224, 236, 0.25) 0px 50px 60px -10px, rgba(131, 139, 146, 0.3) 0px 30px 40px -20px, rgba(38, 40, 43, 0.167) 0px -2px 6px 0px inset;
+}
+
+/* tag button list CSS */
+.button-74 {
+  background-color: #8ebffe63;
+  border: 2px solid rgba(126, 189, 253, 0.304);
+  border-radius: 30px;
+  box-shadow: rgba(53, 111, 169, 0.305) 4px 4px 0 0;
+  color: #202127;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 14px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  letter-spacing: -2px;
+  line-height: 40px;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #cfd1f15a 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 90px;
+    padding: 0 14px;
+  }
+}
+ 
+
+.review_text {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ 
