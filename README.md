@@ -44,7 +44,7 @@
 
 # 8월
 
-![Thunersee 강, 스위스와 인터라켄 도시](https://img.freepik.com/premium-photo/interlaken-town-with-thunersee-river-switzerland_1339-63307.jpg)
+![img](README.assets/interlaken-town-with-thunersee-river-switzerland_1339-63307.jpg)
 
 - 😎[8월 1일](./8월/8.1_python.md)
 - 😩[8월 2일](./8월/8.2_python.md)
@@ -201,6 +201,9 @@
 - 🙋‍♀️[11월 25일](./11월/11.25_project.md)
 - 🙇‍♀️[11월 26일](./11월/11.26_자습.md)
 - 💇‍♀️[11월 27일](./11월/11.27_자습.md)
+- 🥺[11월 28일](./11월/11.28_project.md)
+- 🧙‍♀️[11월 29일](./11월/11.29_project.md)
+- 🧑‍🎤[11월 30일](./11월/11.30_project.md)
 
 </div>
 </details>
@@ -210,11 +213,14 @@
 <details>
  <summary>12월</summary>
 <div markdown="1">
-
-
 # 12월
 
-- 😀[9월 1일](./9월/9.1_Web.md)
+![img](README.assets/cms_temp_article_18161108451780.jpg)
+
+- 😵[12월 1일](./12월/12.1_project.md)
+- 😴[12월 2일](./12월/12.2_project.md)
+- 🕵️‍♀️[12월 3일](./12월/12.3_project.md)
+- 🧛[12월 4일](./12월/12.4_project.md)
 
 </div>
 </details>
