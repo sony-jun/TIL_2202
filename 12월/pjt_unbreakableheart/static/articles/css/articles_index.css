@@ -1,0 +1,248 @@
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.title-text {
+  font-weight: lighter;
+  background-color: rgb(239, 239, 239, 0.4);
+  padding-left: 5rem;
+  padding-right: 5rem;
+  text-align: center;
+  border: rgb(239, 239, 239, 0.4);
+  border-radius: 10px;
+}
+
+.add-a {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.article-card {
+  box-shadow: 5px 5px 30px 5px #363062;
+  background-color: rgb(239, 239, 239, 0.5);
+  border-radius: 15px;
+  margin-bottom: 3rem !important;
+}
+
+.playlist {
+  background-color: black;
+  width: 97%;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.thumbnail-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail-image {
+  width: 100px;
+  padding: 0;
+}
+
+.song-title-body {
+  align-items: center;
+  display: flex;
+}
+
+.song-title-text {
+  margin: 0;
+  color: white;
+  overflow: hidden;
+  word-break: break-all;
+  font-size: 12px;
+  display:
+    -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical
+}
+
+.articles-image {
+  width:100%;
+  max-height: 75vh;
+
+}
+
+.articles-body-nopic {
+  margin: 2rem;
+}
+
+.articles-body-pic {
+  margin: 2rem;
+  height: 20vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.articles-user {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+  color: gray;
+  background-color: rgb(255, 255, 255, 0.4);
+  border: rgb(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+/* /static/calendar/css/calendar.css */
+
+html, body {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight:lighter!important;
+}
+
+.title_is_user{
+  font-weight:lighter;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background-color:rgb(239, 239, 239, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* /static/css/timeline.css */
+
+.addtxt {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 13px;
+	width: 400px;
+	background-color: #e5e8ed;
+}
+
+.form-control {
+	color: #000;
+}
+
+.card-box{
+    box-shadow:5px 5px 30px 5px #363062;
+    background-color:rgb(239, 239, 239, 0.5); 
+    border-radius:15px;
+    width:60vw; 
+    cursor: pointer;
+}
+
+.card-box:hover{
+    transform: scale(1.1, 1.1);
+    transition:0.8s;
+}
+
+.song-box{
+    background-color:black;
+    width:100%;
+    flex-direction:row; 
+    margin-bottom:2rem;
+}
+
+.song-img-box{
+    display:flex; 
+    justify-content:center; 
+    align-items:center;
+}
+
+.song-img{
+    width:100px; 
+    padding:0;
+}
+
+.song-title-box{
+    align-items:center;
+}
+
+.song-title{
+    color:white; 
+    overflow:hidden; 
+    word-break:break-all; 
+    font-size:12px; 
+    display:-webkit-box; 
+    -webkit-line-clamp:1; 
+    -webkit-box-orient:vertical;
+}
+
+.no-picture-box{
+    height:20vh; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+}
+
+.content-text{
+    font-size:20px; 
+    color:gray;
+    background-color: rgb(255, 255, 255, 0.4);
+    border: rgb(255, 255, 255, 0.4);
+    border-radius: 10px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.short{
+    display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+    overflow:hidden;
+}
+
+.long{
+    display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 11;
+    overflow:hidden;
+}
+
+.middle{
+    display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 5;
+    overflow:hidden;
+}
+
+.created_at{
+    font-size:13px; 
+    margin:0;
+}
+
+.diary_content{
+    font-size:17px; 
+    margin:0;
+}
+
+.diary_pic{
+    height:300px; 
+    width:100%;
+    object-fit: cover;
+}
+
+.song_and_picture{
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    height:100%; 
+    width:100%; 
+    flex-direction:column;
+}
+
+.song_no_picture{
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    height:100%;
+}
+
+.no_song_no_picture{
+    width:60vw; 
+    padding:1.5rem 12px; 
+    cursor: pointer;
+}

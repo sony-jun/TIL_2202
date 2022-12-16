@@ -1,0 +1,56 @@
+{% extends 'base-only.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/music/css/search.css">
+{% endblock css %}
+
+{% block content %}
+<div class="min">
+
+  <section class="text-center">
+    <div class="container">
+      <div class="search-text-box">
+        <h1 class="mb-5 search-text rounded-3">유튜브에서 음악 검색</h1>
+      </div>
+      <form method="POST">
+        <div class="input-group mb-3">
+          {% csrf_token %}
+          <input type="text" name="search" placeholder="검색어에 따라 6개의 결과물을 출력해 줍니다." class="form-control input-box" aria-label="Username">
+          <button type="submit" name="submit" value="search" class="btn px-5 btn-submit">검색</button>
+        </div>
+        <div class="fw-bold">(재생할 수 없는 영상은 글이나 메세지에 첨부하여도 재생이 안 되요)</div>
+      </form>
+    </div>
+  </section>
+
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        {% for video in videos %}
+        <div class="col-6 col-md-4 mb-4">
+          <form class="h-100" action="{% url 'music:create' %}" method="post">
+            {% csrf_token %}
+            <input name="song_title" style="display: none;" value='{{ video.title }}'></input>
+            <input name="song_url" style="display: none;" value='{{ video.id }}'></input>
+            <input name="song_thumbnail" style="display: none;" value='{{ video.thumbnail }}'></input>
+            <input name="song_runtime" style="display: none;" value="{{ video.duration }}"></input>
+          <div class="card shadow-sm h-100">
+              <iframe class="youtube-player-4f3f462072931" type="text/html" width="100%" height="225" src="http://www.youtube.com/embed/{{ video.id }}" frameborder="0"></iframe>
+            <div class="card-body card-box">
+              <p class="card-text music-title">{{ video.title }}</p>
+              <div class="d-flex justify-content-between align-items-center my-3 music-detail">
+                <small class="text-muted">{{ video.duration }}</small>
+                <button type="submit" class="btn btn-submit add-btn">노래 추가하기</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

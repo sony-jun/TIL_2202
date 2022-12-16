@@ -1,0 +1,113 @@
+.body {
+  display:flex; 
+  justify-content:center; 
+  align-items:center;
+}
+
+.user {
+  background-color:rgb(239, 239, 239, 0.8); 
+  box-shadow:5px 5px 30px 5px #363062; 
+  border-radius:15px; 
+  width:60vw; 
+  min-width: 350px;
+}
+
+.user-name {
+  font-weight:bold;
+}
+
+.user-text {
+  font-weight:lighter; 
+  font-size:20px; 
+  padding-top:3rem;
+  text-align: center;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box {
+  display:flex; 
+  flex-direction:column;
+}
+
+.search-input {
+  border-radius:5px; 
+  background-color: transparent;
+}
+
+.submit-button {
+  padding-bottom:2rem; 
+  display:flex; 
+  justify-content:center; 
+  align-items:center;
+}
+
+/* /static/css/btn.css */
+
+/* /static/css/search.css */
+
+.search-off {
+  display: none;
+
+}
+
+.search-div {
+  position: absolute;
+  top: 1;
+  width: 40%;
+  height: 300px;
+  background-color: rgb(238, 238, 238);
+  overflow: scroll;
+  z-index: 100;
+  overflow-x: hidden;
+  border-radius: 10px;
+  border: var(--my-gray) solid 1px;
+  opacity: 1;
+}
+
+@media(max-width: 768px) {
+  .search-div {
+    width: 50%;
+  }
+}
+
+@media(max-width: 480px) {
+  .search-div {
+    width: 70%;
+  }
+}
+
+/* /static/css/articles_create.css */
+
+.wd {
+    min-width: 300px;
+}
+
+.wdt {
+    min-width: 300px;
+    height: 100px;
+}
+
+.submit-btn {
+    width: 40vw;
+    margin-top: 3vh;
+    height: 8vh;
+    border: 1px solid rgb(23, 23, 23);
+    background-color: rgb(23, 23, 23);
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #363062;
+    color: white;
+}
+
+.submit-btn:active {
+    background-color: #363062 !important;
+    color: white !important;
+    border: 1px solid #363062 !important;
+}

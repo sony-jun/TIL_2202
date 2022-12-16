@@ -1,0 +1,68 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: lighter;
+    z-index: -2;
+}
+
+.bg {
+    background-size: 300px;
+    background-image: url('/static/images/bg.png');
+    background-attachment: fixed;
+    min-height: 100%;
+}
+
+.base_1{
+    padding: 2vh 0;
+    z-index: 2;
+}
+
+.base_2{
+    width: 30%;
+    padding-left: 5vh;
+}
+
+.base_3{
+    height: 100px;
+    width: 100px;
+}
+
+.base_4{
+    margin: 0;
+    width: 30%;
+    padding-right: 5vh;
+}
+
+.base_5{
+    height: 30px;
+    width: 30px;
+}
+
+.base_6{
+    height: 100px;
+}
+
+.base_7{
+    height: 32px;
+    width: 32px;
+}
+
+.base_8{
+    height: 35px;
+    width: 35px;
+}
+
+.base_9{
+    height: 40px;
+    width: 40px;
+}
+
+.logo-bg {
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.cnt {
+    position: absolute; 
+    top : -20px;
+}

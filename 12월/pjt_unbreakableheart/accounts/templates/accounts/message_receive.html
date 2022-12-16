@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block css %}
+<!-- <link rel="stylesheet" href="/static/css/message_receive.css">
+<link rel="stylesheet" href="/static/css/btn.css"> -->
+<link rel="stylesheet" href="/static/accounts/css/message_receive.css">
+{% endblock css %}
+
+{% block content %}
+
+<h4 class="text-center text-white mt-5">내가 받은 메시지</h4>
+{% if message == 1 %}
+<p class="text-center text-white mt-4">받은 메시지가 없습니다.</p>
+{% else %}
+<div class="message_receive_3 mt-4"></div>
+<!-- 메시지 전체 삭제 Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">전체 삭제</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>전체 삭제하시겠습니까?</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="{% url 'accounts:message_delete_all' %}" type="submit" class="btn btn-danger">삭제하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form class="" action="{% url 'accounts:message_delete' %}" method="POST">
+    {% csrf_token %}
+    <div class="message_receive_3">
+        <button class="btn d-flex part" type="submit">선택 삭제</button>
+        <button class="btn ms-2 fw-bold whole" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">전체 삭제</button>
+    </div>
+
+    <div style="height:1rem;"></div>
+    <!-- 메세지들 -->
+    {% for m in message %}
+    <div class="d-flex justify-content-center py-2 mb-2">
+        <div class="second py-2 px-2">
+            <input type="checkbox" style="width:1rem; height:1rem; margin-left:1rem;" id="selected" name="selected" value="{{m.id}}">
+            <span>{{ m.articles.created_at |date:'Y-m-d' }}에 작성한 일기로부터</span>
+            <hr style="margin-top:0;">
+            <a class="text-decoration-none" href="{% url 'accounts:message_detail' m.pk %}" style="color:black;"><p class="ms-3 message_receive_1 short">{{ m.content }}</p></a>
+        </div>
+    </div>
+    {% endfor %}
+
+</form>
+{% endif %}
+<div class="container base_6"></div>
+{% endblock content %}

@@ -1,0 +1,176 @@
+.addtxt {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 13px;
+  width: 400px;
+  background-color: #e5e8ed;
+}
+
+.form-control {
+  color: #000;
+}
+
+.text1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 13;
+}
+
+.card-box {
+  box-shadow: 5px 5px 30px 5px #363062;
+  background-color: rgb(239, 239, 239, 0.5);
+  border-radius: 15px;
+  width: 60vw;
+  cursor: pointer;
+}
+
+.card-box:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.8s;
+}
+
+.song-box {
+  background-color: black;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.song-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.song-img {
+  width: 100px;
+  padding: 0;
+}
+
+.song-title-box {
+  align-items: center;
+}
+
+.song-title {
+  color: white;
+  overflow: hidden;
+  word-break: break-all;
+  font-size: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+
+.no-picture-box {
+  height: 20vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content-text {
+  font-size: 20px;
+  color: gray;
+  background-color: rgb(255, 255, 255, 0.4);
+  border: rgb(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.title-text {
+  font-weight: lighter;
+  background-color: rgb(239, 239, 239, 0.4);
+  text-align: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  border: rgb(239, 239, 239, 0.4);
+  border-radius: 10px;
+}
+
+.short {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.long {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 11;
+  overflow: hidden;
+}
+
+.middle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+.text5 {
+  font-size: 12px;
+  color: #676769;
+}
+
+.created_at {
+  font-size: 13px;
+  margin: 0;
+}
+
+.diary_content {
+  font-size: 17px;
+  margin: 0;
+}
+
+.diary_pic {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.song_and_picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+.song_no_picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.no_song_no_picture {
+  width: 60vw;
+  padding: 1.5rem 12px;
+  cursor: pointer;
+}
+
+
+
+.title_is_user {
+  font-weight:lighter;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background-color:rgb(239, 239, 239, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hover:hover {
+  transform: scale(1.05);
+  transition-duration: 0.5s;
+}

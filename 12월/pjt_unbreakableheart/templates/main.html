@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/timeline.css">
+    <link rel="stylesheet" href="/static/calendar/css/calendar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+{% endblock css %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<div class="title">
+    <h1 class="title_is_user rounded-3">나의 이야기📖</h1>
+</div>
+{% endif %}
+{% if request.user.is_authenticated %}
+    {% if not articles %}
+        <div class="d-flex justify-content-center pt-3 pb-2">
+            <a class="form-control addtxt btn btn-light fs-6" href="{% url 'articles:articles_create' %}">오늘의 일기 쓰러가기</a>
+        </div>
+    {% else %}
+        <div class="d-flex justify-content-center pt-3 pb-2">
+            <a class="form-control addtxt btn btn-light fs-6" href="{% url 'articles:articles_create' %}">오늘의 일기 쓰러가기</a>
+        </div>
+    {% endif %}
+{% else %}
+    <div style="height: 500px;" class="d-flex flex-column justify-content-center align-items-center mt-5">
+        <p class="animated fadeInUp text-light fs-3 mb-3" style="animation-delay: 0s;">자신의 하루를 음악으로 기록하고 공유해주세요.</p>
+        <p class="animated fadeInUp text-light fs-3 mb-3" style="animation-delay: 1.5s">누군가의 하루를 공감해주세요.</p>
+        <p class="animated fadeInUp text-light fs-3 mb-3" style="animation-delay: 3s">여러분의 하루들로 페이지를 채워주세요.</p>
+        <div class="d-flex justify-content-center pt-3 pb-2 animated fadeInUp mb-3" style="animation-delay: 4s">
+            <a class="form-control addtxt btn btn-light fs-6" href="{% url 'accounts:login' %}">로그인하러 가기</a>
+        </div>
+    </div>
+{% endif %}
+
+<div class="container">
+    {% for article in articles %}
+    <div class="d-flex justify-content-center">
+
+        {% if article.song or article.picture %}
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 my-4 card-box" onclick="location.href='http://unbreakableheart-env.eba-fq3y3emz.ap-northeast-2.elasticbeanstalk.com/articles/' + {{article.pk}} + '/articles_detail/';">
+            <div class="col-md-6 col-sm-12" style="padding:0 12px;">
+                {% if article.song %}
+                    {% if article.picture %}
+                    <div class="song_and_picture">
+                        <div class="d-flex mt-4 rounded song-box justify-content-center">
+                            <div class="col-5 song-img-box" >
+                                <img class="song-img" src="{{ article.song.song_thumbnail }}" alt="" style="width:10vw;">
+                            </div>
+                            <div class="col-7 d-flex song-title-box">
+                                <p class="mt-3 song-title">{{ article.song.song_title }}</p>
+                            </div>
+                        </div>
+                        <div class="mb-4" style="height:100%; width:100%;">
+                            <a href="{% url 'articles:articles_detail' article.pk %}"><img class="hover rounded diary_pic" src="{{ article.picture.url }}" alt="{{ article.picture }}"></a>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="song_no_picture">
+                        <div class="d-flex mt-4 rounded song-box justify-content-center">
+                            <div class="col-5 song-img-box" >
+                                <img class="song-img" src="{{ article.song.song_thumbnail }}" alt="" style="width:10vw;">
+                            </div>
+                            <div class="col-7 d-flex song-title-box">
+                                <p class="mt-3 song-title">{{ article.song.song_title }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% else %}
+                    {% if article.picture %}
+                        <a href="{% url 'articles:articles_detail' article.pk %}"><img class="hover rounded diary_pic" src="{{ article.picture.url }}" alt="{{ article.picture }}" style="margin:1.5rem 0;"></a>                    
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class="col-md-6 col-sm-12" style="padding:1.5rem 12px;">
+                {% if article.picture %}
+                    {% if article.song %}
+                    <div class="picture-box">
+                        <h1 class="mb-2 content-text text-center">나의 추억</h1>
+                        <p class="text-end mb-1 created_at">{{ article.created_at }}</p>
+                        <a class="text-decoration-none text-dark" href="{% url 'articles:articles_detail' article.pk %}"><p class="long diary_content">{{ article.content | linebreaksbr }}</p></a>
+                    </div>
+                    {% else %}
+                    <div class="picture-box">
+                        <h1 class="mb-2 content-text text-center">나의 추억</h1>
+                        <p class="text-end mb-1 created_at">{{ article.created_at }}</p>
+                        <a class="text-decoration-none text-dark" href="{% url 'articles:articles_detail' article.pk %}"><p class="middle diary_content">{{ article.content | linebreaksbr }}</p></a>
+                    </div>
+                    {% endif %}
+                {% else %}
+                    {% if article.song %}
+                    <div class="no-picture-box">
+                        <h1 class="mb-2 content-text text-center">나의 추억</h1>
+                        <p class="text-end mb-1 created_at">{{ article.created_at }}</p>
+                        <a class="text-decoration-none text-dark" href="{% url 'articles:articles_detail' article.pk %}"><p class="short diary_content">{{ article.content | linebreaksbr }}</p></a>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            </div> 
+        </div>
+
+
+        {% else %}
+
+        <div class="row card-box my-4 no_song_no_picture" onclick="location.href='http://unbreakableheart-env.eba-fq3y3emz.ap-northeast-2.elasticbeanstalk.com/articles/' + {{article.pk}} + '/articles_detail/';">
+            <div class="picture-box">
+                <h1 class="mb-2 content-text text-center">나의 추억</h1>
+                <p class="text-end mb-1 created_at">{{ article.created_at }}</p>
+                <a class="text-decoration-none text-dark" href="{% url 'articles:articles_detail' article.pk %}"><p class="middle diary_content">{{ article.content | linebreaksbr }}</p></a>
+            </div>
+        </div>
+
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+<script>
+    function timeForToday(value) {
+    const today = new Date(); //현재 시간
+    const timeValue = new Date(value); //글 작성시간
+
+    const betweenTime = Math.floor((today.getTime() - timeValue.getTime()) / 1000 / 60);
+    if (betweenTime < 1) return '방금전';
+    if (betweenTime < 60) {
+        return `${betweenTime}분전`;
+    }
+
+    const betweenTimeHour = Math.floor(betweenTime / 60);
+    if (betweenTimeHour < 24) {
+        return `${betweenTimeHour}시간전`;
+    }
+
+    const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
+    if (betweenTimeDay < 365) {
+        return `${betweenTimeDay}일전`;
+    }
+
+    return `${Math.floor(betweenTimeDay / 365)}년전`;
+}
+</script>
+
+<div style="height:10rem;"></div>
+
+<script src="{% static 'accounts/js/.js' %}"></script>
+
+{% endblock content %}

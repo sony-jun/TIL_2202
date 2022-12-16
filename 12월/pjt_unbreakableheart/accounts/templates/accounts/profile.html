@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/accounts/css/profile.css">
+{% endblock css %}
+
+{% block content %}
+<div class="container">
+	<div class="front side">
+		<div class="content">
+			<h1>마이페이지</h1>
+            <p class="mt-2 p1 fs-4">새벽 세 시 - 홍해리</p>
+            <p class="fs-5">단단한 어둠이 밤을 내리찍고 있다</p>
+            <p class="fs-5">허공에 걸려 있는</p>
+            <p class="fs-5">칠흑의 도끼</p>
+            <p class="fs-5">밤은 비명을 치며 깨어지고</p>
+            <p class="fs-5">빛나는 적막이 눈을 말똥처럼 뜨고 있다</p>
+		</div>
+	</div>
+	<div class="back side">
+		<div class="content">
+			<h1>{{ user.fullname }}님의 개인정보</h1>
+            <div class="mt-5">
+                <p class="fs-4 p2"><b>아이디</b> : {{ user.username }}</p>
+                <p class="fs-4 p2"><b>전화번호</b> : {{ user.phone_number }}</p>
+                <p class="fs-4 p2"><b>생일</b> : {{ user.birthday }}</p>
+            </div>
+            <div class="d-flex flex-row justify-content-center">
+                <div class="d-flex flex-column align-items-center mx-3"><p class="text1">나의 일기</p><h6 ><a class="text-decoration-none" style="color: rgb(255, 255, 255);" href="{% url 'main' %}">{{ articles.count }}개</a></h6></div>
+                <div class="d-flex flex-column align-items-center mx-3"><p class="text1">받은 메세지</p><h6><a class="text-decoration-none" style="color: rgb(255, 255, 255);" href="{% url 'accounts:message_receive' %}">{{ message.count }}개</a></h6></div>
+                <div class="d-flex flex-column align-items-center mx-3"><p class="text1">공감한 글</p><h6><a class="text-decoration-none" style="color: rgb(255, 255, 255);" href="{% url 'accounts:feeling_page' %}">{{feelings}}개</a></h6></div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <a class="btn-two purple t1" href="{% url 'accounts:update' user.pk %}">수정</a>
+                <a class="btn-two purple mx-2 t1" href="" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">탈퇴</a>
+                <a class="btn-two purple t1" href="{% url 'accounts:password' %}">비밀번호 변경</a>
+            </div>
+		</div>
+	</div>
+    <!-- 탈퇴 Modal -->
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">탈퇴하기</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>정말로 탈퇴하시겠습니까?</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="{% url 'accounts:delete' %}" type="submit" class="btn btn-danger">탈퇴하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

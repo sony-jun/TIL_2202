@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %} 
+
+{% block css %}
+<!-- <link rel="stylesheet" href="/static/css/accounts.css"> -->
+<link rel="stylesheet" href="/static/accounts/css/signup.css">
+{% endblock css %}
+
+{% block content %}
+
+<!-- signup -->
+<div class="container">
+    <div class="row login-box d-flex justify-content-center align-items-center">
+        <div class="col-md-8">
+            {% if validate == 1 %}
+                <div class="alert-align">
+                    <div class="alert-box">
+                        <h1 align="center" class="alert-text">제출양식을 다시 확인해주세요.</h1>
+                    </div>
+                </div>
+            {% else %}
+            {% endif %}
+            <form action="{% url 'accounts:signup' %}" method="POST" style="padding-top:2rem; background-color:rgb(239, 239, 239, 0.5); border-radius: 15px; ">
+                {% csrf_token %}
+                <h1 class="text1" align="center">회원가입</h1>
+                <div class="all-steps" id="all-steps">
+                    <img class="step" src="{% static 'images/heart.png' %}" alt=""> 
+                    <img class="step" src="{% static 'images/heart.png' %}" alt=""> 
+                    <img class="step" src="{% static 'images/heart.png' %}" alt=""> 
+                    <img class="step" src="{% static 'images/heart.png' %}" alt=""> 
+                    <img class="step" src="{% static 'images/heart.png' %}" alt=""> 
+                    <img class="step" src="{% static 'images/heart.png' %}" alt=""> 
+                </div>
+                <div class="tab">
+                    <h1 align="center" class="input-title">이름을 알려주세요.</h1>
+                    <div class="input-text">
+                        <input type="text" class="input-signup" placeholder="ex) 홍길동" name="fullname" required autofocus readonly onfocus="this.removeAttribute('readonly');">
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <h1 align="center" class="input-title">생년월일을 알려주세요.</h1>
+                    <div class="input-text">
+                        <input type="text" class="input-signup" placeholder="ex) 2022-11-24" name="birthday" required autofocus readonly onfocus="this.removeAttribute('readonly');">
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <h1 align="center" class="input-title">전화번호를 알려주세요.</h1>
+                    <div class="input-text">
+                        <input type="text" class="input-signup" placeholder="ex) 01012345678" name="phone_number" required autofocus readonly onfocus="this.removeAttribute('readonly');">
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <h1 align="center" class="input-title">사용할 아이디를 입력하세요.</h1>
+                    <div class="input-text">
+                        <input type="text" class="input-signup" placeholder="지금, 우린 에서 사용할 아이디를 입력하세요." name="username" required autofocus readonly onfocus="this.removeAttribute('readonly');">
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <h1 align="center" class="input-title">사용할 비밀번호를 입력하세요.</h1>
+                    <div class="input-text">
+                        <input type="password" class="input-signup" placeholder="최소 8자 이상으로, 숫자로만 이루어진 비밀번호는 사용할 수 없습니다." name="password1" required autofocus readonly onfocus="this.removeAttribute('readonly');">
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <h1 align="center" class="input-title">비밀번호를 한번 더 입력하세요.</h1>
+                    <div class="input-text">
+                        <input type="password" class="input-signup" placeholder="한번 더 입력하세요" name="password2" required autofocus readonly onfocus="this.removeAttribute('readonly');">
+                    </div>
+                </div>
+
+                <div class="text2" id="nextprevious">
+                    <div class="text3">
+                        <img class="step-button prev" id="prevBtn" onclick="nextPrev(-1)" src="{% static 'images/left-arrow.png' %}" alt="">
+                        <img class="step-button next" id="nextBtn" onclick="nextPrev(1)" src="{% static 'images/right-arrow.png' %}" alt="">
+                        <button class="final" id="signup-submit" type="submit"><img class="step-button" src="{% static 'images/right-arrow.png' %}" alt=""></button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div style="height:2rem;"></div>
+
+<script src="{% static 'accounts/js/signup.js' %}"></script>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="/static/css/btn.css"> -->
+<link rel="stylesheet" href="/static/accounts/css/update.css">
+{% endblock css %}
+
+{% block content %}
+<div class="container main_style">
+  <div class="p-5">
+    <h1 class="mx-5">회원 수정</h1>
+    <form class="mx-5 mb-5" action="" method="POST">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <input class="btn-two purple" type="submit" value="확인">
+    </form>
+  </div>
+</div>
+<div class="container base_6"></div>
+{% endblock content %}

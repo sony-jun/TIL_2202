@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block css %}
+
+<link rel="stylesheet" href="/static/accounts/css/feeling_page.css">
+
+{% endblock css %}
+
+{% block content %}
+<div class="title">
+    <h1 class="title_is_user rounded-3">공감한 글📖</h1>
+</div>
+
+
+
+<div class="container">
+    {% for feeling in feelings %}
+    <div class="d-flex justify-content-center">
+
+        {% if feeling.articles.song or feeling.articles.picture %}
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 my-4 card-box" onclick="location.href='http://unbreakableheart-env.eba-fq3y3emz.ap-northeast-2.elasticbeanstalk.com/articles/' + {{feeling.articles.pk}} + '/articles_detail/';">
+            <div class="col-md-6 col-sm-12" style="padding:0 12px;">
+                {% if feeling.articles.song %}
+                    {% if feeling.articles.picture %}
+                    <div class="song_and_picture">
+                        <div class="d-flex mt-4 rounded song-box justify-content-center">
+                            <div class="col-5 song-img-box" >
+                                <img class="song-img" src="{{ feeling.articles.song.song_thumbnail }}" alt="" style="width:10vw;">
+                            </div>
+                            <div class="col-7 d-flex song-title-box">
+                                <p class="mt-3 song-title">{{ feeling.articles.song.song_title }}</p>
+                            </div>
+                        </div>
+                        <div class="mb-4" style="height:100%; width:100%;">
+                            <a href="{% url 'articles:articles_detail' feeling.articles.pk %}"><img class="hover rounded diary_pic" src="{{ feeling.articles.picture.url }}" alt="{{ feeling.articles.picture }}"></a>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="song_no_picture">
+                        <div class="d-flex mt-4 rounded song-box justify-content-center">
+                            <div class="col-5 song-img-box" >
+                                <img class="song-img" src="{{ feeling.articles.song.song_thumbnail }}" alt="" style="width:10vw;">
+                            </div>
+                            <div class="col-7 d-flex song-title-box">
+                                <p class="mt-3 song-title">{{ feeling.articles.song.song_title }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% else %}
+                    {% if feeling.articles.picture %}
+                        <a href="{% url 'articles:articles_detail' feeling.articles.pk %}"><img class="hover rounded diary_pic" src="{{ feeling.articles.picture.url }}" alt="{{ feeling.articles.picture }}" style="margin:1.5rem 0;"></a>                    
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class="col-md-6 col-sm-12" style="padding:1.5rem 12px;">
+                {% if feeling.articles.picture %}
+                    {% if feeling.articles.song %}
+                    <div class="picture-box">
+                        <h1 class="mb-2 content-text text-center">공감한 추억</h1>
+                        <p class="text-end mb-1 created_at">{{ feeling.articles.created_at }}</p>
+                        <a class="text-decoration-none text-dark" href="{% url 'articles:articles_detail' feeling.articles.pk %}"><p class="long diary_content">{{ feeling.articles.content | linebreaksbr }}</p></a>
+                    </div>
+                    {% else %}
+                    <div class="picture-box">
+                        <h1 class="mb-2 content-text text-center">공감한 추억</h1>
+                        <p class="text-end mb-1 created_at">{{ feeling.articles.created_at }}</p>
+                        <a class="text-decoration-none text-dark" href="{% url 'articles:articles_detail' feeling.articles.pk %}"><p class="middle diary_content">{{ feeling.articles.content | linebreaksbr }}</p></a>
+                    </div>
+                    {% endif %}
+                {% else %}
+                    {% if feeling.articles.song %}
+                    <div class="no-picture-box">
+                        <h1 class="mb-2 content-text text-center">공감한 추억</h1>
+                        <p class="text-end mb-1 created_at">{{ feeling.articles.created_at }}</p>
+                        <a class="text-decoration-none text-dark" href="{% url 'articles:articles_detail' feeling.articles.pk %}"><p class="short diary_content">{{ feeling.articles.content | linebreaksbr }}</p></a>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            </div> 
+        </div>
+
+
+        {% else %}
+
+        <div class="row card-box my-4 no_song_no_picture" onclick="location.href='http://unbreakableheart-env.eba-fq3y3emz.ap-northeast-2.elasticbeanstalk.com/articles/' + {{feeling.articles.pk}} + '/articles_detail/';">
+            <div class="picture-box">
+                <h1 class="mb-2 content-text text-center">공감한 추억</h1>
+                <p class="text-end mb-1 created_at">{{ article.created_at }}</p>
+                <a class="text-decoration-none text-dark" href="{% url 'articles:articles_detail' feeling.articles.pk %}"><p class="middle diary_content">{{ feeling.articles.content | linebreaksbr }}</p></a>
+            </div>
+        </div>
+
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+<div class="container base_6"></div>
+
+{% endblock content %}

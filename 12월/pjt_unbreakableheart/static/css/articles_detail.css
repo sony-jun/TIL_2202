@@ -1,0 +1,95 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.box {
+  width: 300px;
+  height: 100px;
+}
+
+.timerBox {
+  width: 0px;
+  outline: 0px solid black;
+}
+
+.timerBox .time {
+  font-size: 0pt;
+  color: #4C4C4C;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.btnBox {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.btnBox .fa {
+  margin: 10px 10px;
+  font-size: 30pt;
+  color: #e2a384;
+  cursor: pointer;
+}
+
+.review-card {
+  box-shadow: rgba(210, 224, 236, 0.25) 0px 50px 60px -10px, rgba(131, 139, 146, 0.3) 0px 30px 40px -20px, rgba(38, 40, 43, 0.167) 0px -2px 6px 0px inset;
+}
+
+.anim-pause {
+  animation-play-state: paused !important;
+}
+
+.recorder {
+  -webkit-animation: spin 2.5s linear 0s infinite normal;
+  -moz-animation: spin 2.5s linear 0s infinite normal;
+  -o-animation: spin 2.5s linear 0s infinite normal;
+  animation: spin 2.5s linear 0s infinite normal;
+}
+
+@-webkit-keyframes spin{
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spin{
+  0% {
+    -moz-transform: rotate(0);
+  }
+  
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spin{
+  0% {
+    -o-transform: rotate(0);
+  }
+  
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin{
+  0% {
+    transform: rotate(0);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}

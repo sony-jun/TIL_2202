@@ -1,0 +1,62 @@
+.wd {
+    min-width: 300px;
+}
+
+.wdt {
+    min-width: 300px;
+    height: 100px;
+}
+
+.wdth {
+    min-width: 350px;
+    border-color: aliceblue;
+}
+
+.input-box {
+    background-color: transparent;
+    width: 40vw;
+    border: 1.5px solid rgb(51, 51, 51);
+    height: 4vh;
+    padding-left: 1.5rem;
+}
+
+.input-box::placeholder {
+    color: rgb(116, 116, 116);
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.input-text {
+    background-color: transparent;
+    width: 40vw;
+    border: 1.5px solid rgb(51, 51, 51);
+    height: 30vh;
+    padding-left: 1.5rem;
+    padding-top: 1rem;
+}
+
+.input-text::placeholder {
+    color: rgb(116, 116, 116);
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.submit-btn {
+    width: 40vw;
+    margin-top: 3vh;
+    height: 8vh;
+    border: 1px solid rgb(23, 23, 23);
+    background-color: rgb(23, 23, 23);
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #363062;
+    color: white;
+}
+
+.submit-btn:active {
+    background-color: #363062 !important;
+    color: white !important;
+    border: 1px solid #363062 !important;
+}

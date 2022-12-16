@@ -1,0 +1,153 @@
+.message_detail_1 {
+  background-color: rgb(239, 239, 239, 0.8);
+  box-shadow: 5px 5px 30px 5px #363062;
+  border-radius: 15px;
+  width: 30vw;
+  min-width: 320px;
+  word-break: break-all;
+}
+
+.message_detail_2 {
+  color: red;
+}
+
+.message_detail_3 {
+  height: 100px;
+  width: 100px;
+}
+
+.message_detail_4 {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+}
+
+.message_detail_5 {
+  height: 100px;
+  width: 150px;
+}
+
+.message_detail_6 {
+  max-width: 100%;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.cdp {
+  background-color: white;
+  padding: 1rem;
+  position: absolute;
+  top: 34px;
+  left: 34px;
+  border-radius: 50%;
+}
+
+/* /static/css/articles_detail.css */
+
+.box {
+  width: 300px;
+  height: 100px;
+}
+
+.timerBox {
+  width: 0px;
+  outline: 0px solid black;
+}
+
+.timerBox .time {
+  font-size: 0pt;
+  color: #4C4C4C;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.btnBox {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.btnBox .fa {
+  margin: 10px 10px;
+  font-size: 30pt;
+  color: #e2a384;
+  cursor: pointer;
+}
+
+.review-card {
+  box-shadow: rgba(210, 224, 236, 0.25) 0px 50px 60px -10px, rgba(131, 139, 146, 0.3) 0px 30px 40px -20px, rgba(38, 40, 43, 0.167) 0px -2px 6px 0px inset;
+}
+
+.anim-pause {
+  animation-play-state: paused !important;
+}
+
+.recorder {
+  -webkit-animation: spin 2.5s linear 0s infinite normal;
+  -moz-animation: spin 2.5s linear 0s infinite normal;
+  -o-animation: spin 2.5s linear 0s infinite normal;
+  animation: spin 2.5s linear 0s infinite normal;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0);
+  }
+
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0);
+  }
+
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* /static/accounts/css/message_detail.css */
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.title-text {
+  font-weight: lighter;
+  background-color: rgb(239, 239, 239, 0.4);
+  padding-left: 5rem;
+  padding-right: 5rem;
+  text-align: center;
+  border: rgb(239, 239, 239, 0.4);
+  border-radius: 10px;
+}
+
+.playlist {
+  background-color: black;
+  width: 97%;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}

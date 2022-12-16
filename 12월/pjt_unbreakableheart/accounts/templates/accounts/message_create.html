@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="/static/css/btn.css">
+<link rel="stylesheet" href="/static/css/search2.css"> -->
+<link rel="stylesheet" href="/static/accounts/css/message_create.css">
+{% endblock css %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+  <div class="card m-5 p-5 main_style">
+
+    <h1>메시지 작성</h1>
+    <form action="" method="POST">
+      {% csrf_token %}
+      {% bootstrap_form message_form %}
+      <input id="search_input" class="reviewcreate-userinfo" name="song" type="search" placeholder="클릭 후 노래를 검색하세요"
+        aria-label="Search" autocomplete="off">
+      <div>원하는 노래가 없다면
+        <a class="text-decoration-none" href="{% url 'music:search' %}"
+          onclick="window.open(this.href, '_blank', 'width=800, height=600, toolbars=no, scrollbars=yes'); return false;">노래
+          추가</a>
+        <div class="search-off search-div " id="search_box"></div>
+
+      </div>
+      <input class="btn-two purple mt-3" type="submit" value="메세지 보내기">
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{% static 'accounts/js/message_create.js' %}"></script>
+{% endblock content %}

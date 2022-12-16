@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="/static/css/search.css">
+<link rel="stylesheet" href="/static/css/articles_create.css">
+<link rel="stylesheet" href="/static/css/btn.css"> -->
+<link rel="stylesheet" href="/static/articles/css/articles_create.css">
+{% endblock css %}
+{% block content %}
+<div class="main_position" >
+  <div class="main_style">
+    <div> 
+      <h3 class="main_title" align="center"><span class="title_name">{{ user.fullname }}</span>님의 오늘은 어떠신가요?</h3>
+    </div>
+    <div class="main_position ">
+      <form class="main_search" action="" method="POST" enctype="multipart/form-data" >
+        <div>
+          <label>오늘의 음악</label>
+        </div>
+        <input id="search_input" class="reviewcreate-userinfo main_today_search" name="song" type="search "
+          placeholder="당신의 하루를 나타내는 음악을 선택해주세요." aria-label="Search" autocomplete="off">
+          <div>원하는 노래가 없다면
+            <a class="text-decoration-none" href="{% url 'music:search' %}"
+            onclick="window.open(this.href, '_blank', 'width=800, height=600, toolbars=no, scrollbars=yes'); return false;">노래
+            추가</a>
+            <div class="search-off search-div " id="search_box"></div>
+        </div>
+        <br>
+        {% csrf_token %}
+        {% bootstrap_form articles_form %}
+        <div class="main_create_button " style="">
+          <button class="wdt btn submit-btn" type="submit">오늘의 일기 만들기</button>
+        </div>
+    </div>
+    </form>
+    <form id="search_form" action="{% url 'articles:song_search' %}" class="d-flex hidden" role="search"></form>
+  </div>
+
+</div>
+<div style="height:10rem;"></div>
+
+
+<!-- 스크립트-->
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{% static 'articles/js/articles_create.js' %}"></script>
+
+{% endblock content %}
